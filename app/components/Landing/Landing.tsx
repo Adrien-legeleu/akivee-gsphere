@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function Landing() {
   return (
     <div className="w-full h-screen flex items-center justify-center flex-col gap-8 pt-8 bg-neutral-50 overflow-hidden relative">
-      <div className="absolute inset-0 w-full h-full bg-slate-50 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+      <div className="absolute inset-0 w-full h-full bg-neutral-50 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
       <Boxes />
       <h1 className="text-center text-7xl font-semibold z-10">
