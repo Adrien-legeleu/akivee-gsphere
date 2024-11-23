@@ -9,7 +9,19 @@ export const ExpertisesData = [
     text: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.Dignissimos quo voluptatem doloremque similique molestiae repellendus aperiam quasi, esse fugit? Necessitatibus amet, odio, quas fuga itaque veritatis voluptatum omnis harum soluta architecto alias ratione quae minima quos! Maiores aut dolores in illum non fugit voluptatum a ex dolorem optio vitae iste illo provident recusandae, iure eaque quae!",
   },
   {
+    title: "Marketing digital",
+    subtitles: "deisng Logo",
+    img: expertiseImg2,
+    text: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.Dignissimos quo voluptatem doloremque similique molestiae repellendus aperiam quasi, esse fugit? Necessitatibus amet, odio, quas fuga itaque veritatis voluptatum omnis harum soluta architecto alias ratione quae minima quos! Maiores aut dolores in illum non fugit voluptatum a ex dolorem optio vitae iste illo provident recusandae, iure eaque quae!",
+  },
+  {
     title: "Logo design",
+    subtitles: "deisng Logo",
+    img: expertiseImg2,
+    text: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.Dignissimos quo voluptatem doloremque similique molestiae repellendus aperiam quasi, esse fugit? Necessitatibus amet, odio, quas fuga itaque veritatis voluptatum omnis harum soluta architecto alias ratione quae minima quos! Maiores aut dolores in illum non fugit voluptatum a ex dolorem optio vitae iste illo provident recusandae, iure eaque quae!",
+  },
+  {
+    title: "Web design",
     subtitles: "deisng Logo",
     img: expertiseImg2,
     text: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.Dignissimos quo voluptatem doloremque similique molestiae repellendus aperiam quasi, esse fugit? Necessitatibus amet, odio, quas fuga itaque veritatis voluptatum omnis harum soluta architecto alias ratione quae minima quos! Maiores aut dolores in illum non fugit voluptatum a ex dolorem optio vitae iste illo provident recusandae, iure eaque quae!",

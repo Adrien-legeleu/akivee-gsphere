@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 import { ExpertisesData, ExpertisesDataReasons } from "./data";
 import Image from "next/image";
-import ExpertiseImgPrincipal from "@/public/Image/macbookExpertise.png";
+import ExpertiseImgPrincipal from "@/public/Image/freepik__background__99154.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,15 +18,15 @@ export default function Expertises() {
     expertisesRef.current.forEach((element, i) => {
       gsap.fromTo(
         element,
-        { y: 40 }, // Position initiale
+        { y: 30 }, // Position initiale
         {
-          y: 0, // Position finale
+          y: -30, // Position finale
 
           scrollTrigger: {
             trigger: element, // Élément déclencheur
             start: "top 80%", // Quand l'élément est 80% visible
-            end: "bottom 60%", // Fin de l'animation
-            scrub: 1, // Animation fluide synchronisée avec le scroll
+            end: "bottom ", // Fin de l'animation
+            scrub: 3, // Animation fluide synchronisée avec le scroll
           },
         }
       );
@@ -78,7 +78,7 @@ export default function Expertises() {
       {/* Section avec les éléments animés */}
       <div
         className="px-20 pb-20 pt-40 bg-[#001640] space-y-16"
-        style={{ clipPath: "polygon(0 10%, 100% 0, 100% 100%, 0% 100%)" }}
+        style={{ clipPath: "polygon(0 5%, 100% 0, 100% 100%, 0% 100%)" }}
       >
         {ExpertisesData.map((data, idx) => (
           <div
