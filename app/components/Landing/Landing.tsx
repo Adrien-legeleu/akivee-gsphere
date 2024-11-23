@@ -7,7 +7,7 @@ export default function Landing() {
       <div className="absolute inset-0 w-full h-full bg-neutral-50 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
       <Boxes />
-      <h1 className="text-center text-7xl font-semibold z-10">
+      <h1 className="text-center text-title text-7xl font-semibold z-10">
         Lorem ipsum dolor sit <br /> amet consectetur.
       </h1>
       <p className="text-center max-w-2xl z-10">
