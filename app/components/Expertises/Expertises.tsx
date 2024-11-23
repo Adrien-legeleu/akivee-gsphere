@@ -6,16 +6,33 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 import { ExpertisesData, ExpertisesDataReasons } from "./data";
 import Image from "next/image";
-import ExpertiseImgPrincipal from "@/public/Image/freepik__background__99154.png";
+import ExpertiseImgPrincipal from "@/public/Image/expertisePrincipal.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Expertises() {
-  const expertisesRef = useRef<HTMLDivElement[]>([]);
+  const expertisesRefImg = useRef<HTMLDivElement[]>([]);
+  const expertisesRefText = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     // Appliquer une animation à chaque élément de `ExpertisesData`
-    expertisesRef.current.forEach((element, i) => {
+    expertisesRefImg.current.forEach((element, i) => {
+      gsap.fromTo(
+        element,
+        { y: 60 }, // Position initiale
+        {
+          y: -60, // Position finale
+
+          scrollTrigger: {
+            trigger: element, // Élément déclencheur
+            start: "top 80%", // Quand l'élément est 80% visible
+            end: "bottom ", // Fin de l'animation
+            scrub: 3, // Animation fluide synchronisée avec le scroll
+          },
+        }
+      );
+    });
+    expertisesRefText.current.forEach((element, i) => {
       gsap.fromTo(
         element,
         { y: 30 }, // Position initiale
@@ -83,12 +100,12 @@ export default function Expertises() {
         {ExpertisesData.map((data, idx) => (
           <div
             key={`expertise-${idx}`}
-            ref={(el) => {
-              if (el) expertisesRef.current[idx] = el;
-            }}
             className="grid grid-cols-2 gap-6 items-center z-20"
           >
             <div
+              ref={(el) => {
+                if (el) expertisesRefText.current[idx] = el;
+              }}
               className={`space-y-2 ${idx % 2 !== 0 ? "order-2" : "order-1"}`}
             >
               <h6 className="text-neutral-200 text-xs">{data.subtitles}</h6>
@@ -101,11 +118,14 @@ export default function Expertises() {
             </div>
 
             <Image
+              ref={(el) => {
+                if (el) expertisesRefImg.current[idx] = el;
+              }}
               src={data.img}
               alt={`image expertise ${idx}`}
               width={500}
               height={500}
-              className={`w-full h-96 z-20 object-contain ${
+              className={`w-full inline-block h-[380px] z-20 object-contain ${
                 idx % 2 !== 0 ? "order-1" : "order-2"
               }`}
             />
