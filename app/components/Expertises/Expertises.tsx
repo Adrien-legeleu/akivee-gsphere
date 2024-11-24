@@ -13,37 +13,56 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Expertises() {
   const expertisesRefImg = useRef<HTMLDivElement[]>([]);
   const expertisesRefText = useRef<HTMLDivElement[]>([]);
+  const expertisesReasonsRef = useRef<HTMLDivElement[]>([]); // Ajout pour ExpertisesDataReasons
 
   useEffect(() => {
-    // Appliquer une animation à chaque élément de `ExpertisesData`
+    // Animation pour ExpertisesData
     expertisesRefImg.current.forEach((element, i) => {
       gsap.fromTo(
         element,
         { y: 60 }, // Position initiale
         {
           y: -60, // Position finale
-
           scrollTrigger: {
             trigger: element, // Élément déclencheur
             start: "top 80%", // Quand l'élément est 80% visible
-            end: "bottom ", // Fin de l'animation
+            end: "bottom", // Fin de l'animation
             scrub: 3, // Animation fluide synchronisée avec le scroll
           },
         }
       );
     });
+
     expertisesRefText.current.forEach((element, i) => {
       gsap.fromTo(
         element,
         { y: 30 }, // Position initiale
         {
           y: -30, // Position finale
-
           scrollTrigger: {
             trigger: element, // Élément déclencheur
             start: "top 80%", // Quand l'élément est 80% visible
-            end: "bottom ", // Fin de l'animation
+            end: "bottom", // Fin de l'animation
             scrub: 3, // Animation fluide synchronisée avec le scroll
+          },
+        }
+      );
+    });
+
+    // Animation en cascade pour ExpertisesDataReasons
+    expertisesReasonsRef.current.forEach((element, i) => {
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 50 }, // Position et opacité initiales
+        {
+          opacity: 1,
+          y: 0, // Position finale
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: element, // Élément déclencheur
+            start: "top 90%", // Quand l'élément entre dans la vue
+            end: "bottom 50%", // Suivi partiel lors du défilement
+            scrub: 1, // Animation fluide synchronisée avec le scroll
           },
         }
       );
@@ -52,6 +71,7 @@ export default function Expertises() {
 
   return (
     <div className="relative">
+      {/* Barres de séparation */}
       <div className="absolute h-20 w-full bg-transparent top-0 left-0 backdrop-blur-[1px] z-20" />
       <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[14%] z-10" />
       <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[34%] z-10" />
@@ -59,6 +79,7 @@ export default function Expertises() {
       <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[67%] z-10" />
       <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[85%] z-10" />
 
+      {/* Section principale */}
       <div className="grid p-20 bg-gradient-to-b from-neutral-50 to-white grid-cols-2 gap-10">
         <div className="space-y-16 z-20">
           <h2 className="text-title text-4xl uppercase font-semibold">
@@ -75,6 +96,9 @@ export default function Expertises() {
           {ExpertisesDataReasons.map((data, idx) => (
             <div
               key={`reason-${idx}`}
+              ref={(el) => {
+                if (el) expertisesReasonsRef.current[idx] = el;
+              }}
               className="flex flex-row gap-4 p-4 hover:bg-neutral-100 ease-in-out rounded-xl"
             >
               <span className="text-5xl text-title">{data.number}</span>
