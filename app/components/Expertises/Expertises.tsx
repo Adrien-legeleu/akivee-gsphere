@@ -13,37 +13,38 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Expertises() {
   const expertisesRefImg = useRef<HTMLDivElement[]>([]);
   const expertisesRefText = useRef<HTMLDivElement[]>([]);
-  const expertisesReasonsRef = useRef<HTMLDivElement[]>([]); // Ajout pour ExpertisesDataReasons
+  const expertisesImgPrincipal = useRef<HTMLDivElement>(null);
+  const expertisesReasonsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     // Animation pour ExpertisesData
-    expertisesRefImg.current.forEach((element, i) => {
+    expertisesRefImg.current.forEach((element) => {
       gsap.fromTo(
         element,
-        { y: 60 }, // Position initiale
+        { y: 60 },
         {
-          y: -60, // Position finale
+          y: -60,
           scrollTrigger: {
-            trigger: element, // Élément déclencheur
-            start: "top 80%", // Quand l'élément est 80% visible
-            end: "bottom", // Fin de l'animation
-            scrub: 3, // Animation fluide synchronisée avec le scroll
+            trigger: element,
+            start: "top 80%",
+            end: "bottom",
+            scrub: 3,
           },
         }
       );
     });
 
-    expertisesRefText.current.forEach((element, i) => {
+    expertisesRefText.current.forEach((element) => {
       gsap.fromTo(
         element,
-        { y: 30 }, // Position initiale
+        { y: 30 },
         {
-          y: -30, // Position finale
+          y: -30,
           scrollTrigger: {
-            trigger: element, // Élément déclencheur
-            start: "top 80%", // Quand l'élément est 80% visible
-            end: "bottom", // Fin de l'animation
-            scrub: 3, // Animation fluide synchronisée avec le scroll
+            trigger: element,
+            start: "top 80%",
+            end: "bottom",
+            scrub: 3,
           },
         }
       );
@@ -53,20 +54,38 @@ export default function Expertises() {
     expertisesReasonsRef.current.forEach((element, i) => {
       gsap.fromTo(
         element,
-        { opacity: 0, y: 50 }, // Position et opacité initiales
+        { opacity: 0, y: 80 },
         {
           opacity: 1,
-          y: 0, // Position finale
+          y: 0,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: element, // Élément déclencheur
-            start: "top 90%", // Quand l'élément entre dans la vue
-            end: "bottom 50%", // Suivi partiel lors du défilement
-            scrub: 1, // Animation fluide synchronisée avec le scroll
+            trigger: element,
+            start: "top 80%",
+            end: "bottom",
+            scrub: 1,
           },
         }
       );
     });
+
+    // Animation pour expertisesImgPrincipal
+    if (expertisesImgPrincipal.current) {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: expertisesImgPrincipal.current,
+            start: "top 80%",
+            end: "bottom",
+            scrub: 1,
+          },
+        })
+        .fromTo(
+          expertisesImgPrincipal.current,
+          { y: 80 }, // Position initiale à y: 80
+          { y: 0, ease: "power3.out", duration: 1 } // Arrive à y: 0
+        );
+    }
   }, []);
 
   return (
@@ -85,12 +104,14 @@ export default function Expertises() {
           <h2 className="text-title text-4xl uppercase font-semibold">
             Nos expertises
           </h2>
-          <Image
-            src={ExpertiseImgPrincipal}
-            alt="image de la section expertises de notre agence de marketing digital web"
-            width={1500}
-            height={1500}
-          />
+          <div ref={expertisesImgPrincipal} className="relative">
+            <Image
+              src={ExpertiseImgPrincipal}
+              alt="image de la section expertises de notre agence de marketing digital web"
+              width={1500}
+              height={1500}
+            />
+          </div>
         </div>
         <div className="flex flex-col gap-4 z-20">
           {ExpertisesDataReasons.map((data, idx) => (
