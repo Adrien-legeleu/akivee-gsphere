@@ -1,7 +1,7 @@
 import About from "./components/About/About";
 import Expertises from "./components/Expertises/Expertises";
 import Header from "./components/Header/Header";
-import Info from "./components/Info.tsx/info";
+import Info from "./components/Info/Info";
 import Landing from "./components/Landing/Landing";
 
 export default function Home() {
