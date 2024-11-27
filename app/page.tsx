@@ -1,4 +1,5 @@
 import About from "./components/About/About";
+import Contact from "./components/contact/Contact";
 import Expertises from "./components/Expertises/Expertises";
 import Header from "./components/Header/Header";
 import Info from "./components/Info/Info";
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Expertises />
       <Info />
+      <Contact />
     </div>
   );
 }

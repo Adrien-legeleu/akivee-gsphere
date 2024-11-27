@@ -1,6 +1,33 @@
+"use client";
 import { WorldMap } from "@/components/aceternity/world-map";
+import { infoData } from "./data-info";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Info() {
+  const expertisesReasonsRef = useRef<HTMLDivElement[]>([]);
+  useEffect(() => {
+    expertisesReasonsRef.current.forEach((element, i) => {
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "bottom",
+            scrub: 1,
+          },
+        }
+      );
+    });
+  }, []);
   return (
     <div className="w-full grid grid-cols-2  py-20 overflow-hidden ">
       <div className="z-10 pl-20">
@@ -8,42 +35,27 @@ export default function Info() {
           Une agence internationale
         </h2>
         <div className="pt-20 grid grid-cols-2 pl-10 gap-20">
-          <div className="relative max-w-sm ">
-            <div className="h-2 w-2 bg-title rounded-full absolute top-10 -left-5" />
-            <h2 className="text-subtitle text-7xl font-bold ">2</h2>
-            <h3 className="text-title text-2xl font-bold">Pays</h3>
-            <p className="text-sm">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit,
-              voluptatum.
-            </p>
-          </div>
-          <div className="relative max-w-sm top-20 ">
-            <div className="h-2 w-2 bg-title rounded-full absolute top-10 -left-5" />
-            <h2 className="text-subtitle text-7xl font-bold ">100</h2>
-            <h3 className="text-title text-2xl font-bold">Clients</h3>
-            <p className="text-sm">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit,
-              voluptatum.
-            </p>
-          </div>
-          <div className="relative max-w-sm ">
-            <div className="h-2 w-2 bg-title rounded-full absolute top-10 -left-5" />
-            <h2 className="text-subtitle text-7xl font-bold ">2</h2>
-            <h3 className="text-title text-2xl font-bold">Pays</h3>
-            <p className="text-sm">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit,
-              voluptatum.
-            </p>
-          </div>
-          <div className="relative max-w-sm top-20">
-            <div className="h-2 w-2 bg-title rounded-full absolute top-10 -left-5" />
-            <h2 className="text-subtitle text-7xl font-bold ">2</h2>
-            <h3 className="text-title text-2xl font-bold">Pays</h3>
-            <p className="text-sm">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit,
-              voluptatum.
-            </p>
-          </div>
+          {infoData.map((data, idx) => {
+            return (
+              <div
+                className="relative max-w-sm "
+                ref={(el) => {
+                  if (el) expertisesReasonsRef.current[idx] = el;
+                }}
+              >
+                <div
+                  className={`h-2 w-2 bg-title rounded-full absolute  ${
+                    idx % 2 !== 0 ? "top-20" : " top-0"
+                  }`}
+                />
+                <h2 className="text-subtitle text-7xl font-bold ">
+                  {data.subtitle}
+                </h2>
+                <h3 className="text-title text-2xl font-bold">{data.title}</h3>
+                <p className="text-sm">{data.text}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className="w-full">

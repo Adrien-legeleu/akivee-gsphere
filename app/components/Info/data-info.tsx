@@ -1,4 +1,4 @@
-const infoData = [
+export const infoData = [
   {
     title: "pays",
     subtitle: "2",
