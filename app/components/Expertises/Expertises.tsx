@@ -140,7 +140,7 @@ export default function Expertises() {
       {/* Section avec les éléments animés */}
       <div
         className="px-20 pb-20 pt-40 bg-[#001640] space-y-16"
-        style={{ clipPath: "polygon(0 5%, 100% 0, 100% 100%, 0% 100%)" }}
+        style={{ clipPath: "polygon(0 4%, 100% 0, 100% 96%, 0% 100%)" }}
       >
         {ExpertisesData.map((data, idx) => (
           <div

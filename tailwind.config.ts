@@ -14,6 +14,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        "40/60": "40% 60%",
+      },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
       },

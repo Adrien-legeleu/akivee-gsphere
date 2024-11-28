@@ -29,30 +29,28 @@ export default function Info() {
     });
   }, []);
   return (
-    <div className="w-full grid grid-cols-2  py-20 overflow-hidden ">
-      <div className="z-10 pl-20">
+    <div className="w-full grid grid-cols-2 py-5  overflow-hidden ">
+      <div className="z-10 pl-20 py-10 ">
         <h2 className="text-4xl text-title uppercase font-bold">
           Une agence internationale
         </h2>
-        <div className="pt-20 grid grid-cols-2 pl-10 gap-20">
+        <div className="pt-10 grid grid-cols-2 pl-10 gap-20">
           {infoData.map((data, idx) => {
             return (
               <div
-                className="relative max-w-sm "
+                className={`relative max-w-sm  ${
+                  idx % 2 !== 0 ? "top-20" : " top-0"
+                }`}
                 ref={(el) => {
                   if (el) expertisesReasonsRef.current[idx] = el;
                 }}
               >
-                <div
-                  className={`h-2 w-2 bg-title rounded-full absolute  ${
-                    idx % 2 !== 0 ? "top-20" : " top-0"
-                  }`}
-                />
+                <div className="h-2 w-2 bg-title rounded-full absolute top-10 -left-5" />
                 <h2 className="text-subtitle text-7xl font-bold ">
                   {data.subtitle}
                 </h2>
                 <h3 className="text-title text-2xl font-bold">{data.title}</h3>
-                <p className="text-sm">{data.text}</p>
+                <p className="text-sm backdrop-blur-xl">{data.text}</p>
               </div>
             );
           })}
