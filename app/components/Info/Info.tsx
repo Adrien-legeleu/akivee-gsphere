@@ -29,12 +29,12 @@ export default function Info() {
     });
   }, []);
   return (
-    <div className="w-full lg:grid lg:grid-cols-2 py-5 relative h-full overflow-hidden ">
-      <div className=" lg:pl-20 max-lg:px-10 py-10 ">
+    <div className="w-full lg:grid lg:grid-cols-2 lg:py-5 py-16 relative h-full overflow-hidden ">
+      <div className=" lg:pl-20 max-lg:px-10 lg:py-10 pb-20  ">
         <h2 className="text-4xl text-title uppercase font-bold">
           Une agence internationale
         </h2>
-        <div className="pt-20 grid grid-cols-2 pl-10 gap-20">
+        <div className="lg:pt-20 pt-10 grid grid-cols-2 pl-10 lg:gap-20 gap-10">
           {infoData.map((data, idx) => {
             return (
               <div
@@ -56,17 +56,15 @@ export default function Info() {
           })}
         </div>
       </div>
-      <div className="w-full">
-        {" "}
-        <WorldMap
-          dots={[
-            {
-              start: { lat: 38.8666667, lng: 2.3333 }, // Paris
-              end: { lat: 28.6139, lng: 77.209 }, // New Delhi
-            },
-          ]}
-        />
-      </div>
+
+      <WorldMap
+        dots={[
+          {
+            start: { lat: 38.8666667, lng: 2.3333 }, // Paris
+            end: { lat: 28.6139, lng: 77.209 }, // New Delhi
+          },
+        ]}
+      />
     </div>
   );
 }

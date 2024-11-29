@@ -93,13 +93,13 @@ export default function Expertises() {
       <div className="absolute h-20 w-full bg-transparent top-0 left-0 backdrop-blur-[1px] z-20" />
       <div className="absolute h-20 w-full bg-transparent bottom-0 left-0 backdrop-blur-[1px] z-20" />
 
-      <div className="grid lg:p-20 p-10 bg-gradient-to-b from-neutral-50 to-white lg:grid-cols-2 grid-cols-40/60 gap-10">
+      <div className="sm:grid flex flex-col lg:p-20 p-10 bg-gradient-to-b from-neutral-50 to-white lg:grid-cols-2 sm:grid-cols-40/60 gap-10">
         <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[16%]" />
         <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[33%]" />
         <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[50%]" />
         <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[67%]" />
         <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[85%] " />
-        <div className="space-y-16 z-20">
+        <div className="sm:space-y-16 space-y-5 z-20">
           <h2 className="text-title text-4xl uppercase font-semibold">
             Nos expertises
           </h2>
@@ -139,11 +139,11 @@ export default function Expertises() {
         className="lg:px-20 px-10 pb-20 md:pt-40 pt-20 bg-[#001640] md:space-y-16 space-y-24 z-20 relative"
         style={{ clipPath: "polygon(0 4%, 100% 0, 100% 96%, 0% 100%)" }}
       >
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[16%]" />
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed -top-2 left-[33%]" />
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed -top-4 left-[50%]" />
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed -top-8 left-[67%]" />
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed -top-12 left-[85%] " />
+        <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-2 left-[16%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-5 left-[33%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-10 left-[50%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-16 left-[67%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-20 left-[85%] " />
         {ExpertisesData.map((data, idx) => (
           <div
             key={`expertise-${idx}`}
