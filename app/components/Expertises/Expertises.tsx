@@ -90,16 +90,14 @@ export default function Expertises() {
 
   return (
     <div className="relative">
-      {/* Barres de séparation */}
       <div className="absolute h-20 w-full bg-transparent top-0 left-0 backdrop-blur-[1px] z-20" />
-      <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[14%] z-10" />
-      <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[34%] z-10" />
-      <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[50%] z-10" />
-      <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[67%] z-10" />
-      <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[85%] z-10" />
 
-      {/* Section principale */}
       <div className="grid p-20 bg-gradient-to-b from-neutral-50 to-white grid-cols-2 gap-10">
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[16%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[33%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[50%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[67%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-12 left-[85%] " />
         <div className="space-y-16 z-20">
           <h2 className="text-title text-4xl uppercase font-semibold">
             Nos expertises
@@ -136,16 +134,19 @@ export default function Expertises() {
           ))}
         </div>
       </div>
-
-      {/* Section avec les éléments animés */}
       <div
-        className="px-20 pb-20 pt-40 bg-[#001640] space-y-16"
+        className="px-20 pb-20 pt-40 bg-[#001640] space-y-16 z-50 relative"
         style={{ clipPath: "polygon(0 4%, 100% 0, 100% 96%, 0% 100%)" }}
       >
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[16%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed -top-2 left-[33%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed -top-4 left-[50%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed -top-8 left-[67%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed -top-12 left-[85%] " />
         {ExpertisesData.map((data, idx) => (
           <div
             key={`expertise-${idx}`}
-            className="grid grid-cols-2 gap-6 items-center z-20"
+            className="grid grid-cols-2 gap-6 items-center d"
           >
             <div
               ref={(el) => {
@@ -162,18 +163,22 @@ export default function Expertises() {
               </p>
             </div>
 
-            <Image
+            <div
               ref={(el) => {
                 if (el) expertisesRefImg.current[idx] = el;
               }}
-              src={data.img}
-              alt={`image expertise ${idx}`}
-              width={500}
-              height={500}
-              className={`w-full inline-block h-[380px] z-20 object-contain ${
+              className={`relative ${
                 idx % 2 !== 0 ? "order-1" : "order-2"
-              }`}
-            />
+              } z-50`}
+            >
+              <Image
+                src={data.img}
+                alt={`image expertise ${idx}`}
+                width={500}
+                height={500}
+                className="w-full block h-[380px] object-contain"
+              />
+            </div>
           </div>
         ))}
       </div>

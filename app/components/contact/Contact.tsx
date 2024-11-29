@@ -57,7 +57,7 @@ export default function Contact() {
           Vous êtes intéressées ?
         </span>
         <br />
-        <span className="bg-[#3F2A78] dark:bg-[#A0AEC0] p-3 inline-block rounded-lg -rotate-3 text-neutral-50 dark:text-black">
+        <span className="bg-title p-3 inline-block rounded-lg -rotate-3 text-neutral-50 dark:text-black">
           Contactez-nous !
         </span>
       </h2>

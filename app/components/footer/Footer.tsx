@@ -19,7 +19,7 @@ export default function Footer() {
               src={Logo}
               className="w-12 h-12 rounded-full"
             /> */}
-            Adrec
+            Akivee GSphere
           </h2>
           <i className="text-lg md:text-left text-center text-muted-foreground inline-block">
             "Adrec, votre partenaire pour des solutions web sur-mesure et

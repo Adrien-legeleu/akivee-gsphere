@@ -7,14 +7,14 @@ export default function Landing() {
       <div className="absolute inset-0 w-full h-full bg-neutral-50 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
       <Boxes />
-      <h1 className="text-center text-title text-7xl font-semibold z-10">
+      <h1 className="text-center text-title lg:text-7xl md:text-6xl sm:text-5xl text-4xl font-semibold z-10">
         Lorem ipsum dolor sit <br /> amet consectetur.
       </h1>
-      <p className="text-center max-w-2xl z-10">
+      <p className="text-center max-w-2xl px-5 sm:text-base text-sm z-10">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
         pariatur mollitia ex, magni sequi autem.
       </p>
-      <div className="space-x-5 z-10">
+      <div className="space-x-5 md:text-base text-sm px-5 z-10">
         <Button>Contactez-nous</Button>
         <Button variant="secondary">Nos expertises</Button>
       </div>
