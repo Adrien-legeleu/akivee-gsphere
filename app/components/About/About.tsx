@@ -74,7 +74,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="h-screen w-full grid grid-cols-2 px-20 gap-10 bg-neutral-50">
+    <div className="lg:h-screen h-full w-full lg:grid lg:grid-cols-2 flex flex-col lg:px-20 px-10 gap-10 bg-neutral-50">
       <div className="flex flex-col gap-4 justify-center">
         <div className="max-w-xl">
           <h6 className="text-blue-400 text-xs">Akivee GSphere</h6>
@@ -92,7 +92,7 @@ export default function About() {
       </div>
 
       {/* Section des images animées */}
-      <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+      <div className="relative flex h-[500px]  w-full flex-col items-center justify-center">
         <div className="z-10 relative w-full h-full">
           <div
             className="absolute w-32 h-48  left-0 bottom-10 z-20"

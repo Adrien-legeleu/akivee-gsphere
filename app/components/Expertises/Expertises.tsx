@@ -91,13 +91,14 @@ export default function Expertises() {
   return (
     <div className="relative">
       <div className="absolute h-20 w-full bg-transparent top-0 left-0 backdrop-blur-[1px] z-20" />
+      <div className="absolute h-20 w-full bg-transparent bottom-0 left-0 backdrop-blur-[1px] z-20" />
 
-      <div className="grid p-20 bg-gradient-to-b from-neutral-50 to-white grid-cols-2 gap-10">
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[16%]" />
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[33%]" />
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[50%]" />
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[67%]" />
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-12 left-[85%] " />
+      <div className="grid lg:p-20 p-10 bg-gradient-to-b from-neutral-50 to-white lg:grid-cols-2 grid-cols-40/60 gap-10">
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[16%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[33%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[50%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[67%]" />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[85%] " />
         <div className="space-y-16 z-20">
           <h2 className="text-title text-4xl uppercase font-semibold">
             Nos expertises
@@ -135,7 +136,7 @@ export default function Expertises() {
         </div>
       </div>
       <div
-        className="px-20 pb-20 pt-40 bg-[#001640] space-y-16 z-50 relative"
+        className="lg:px-20 px-10 pb-20 md:pt-40 pt-20 bg-[#001640] md:space-y-16 space-y-24 z-20 relative"
         style={{ clipPath: "polygon(0 4%, 100% 0, 100% 96%, 0% 100%)" }}
       >
         <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-0 left-[16%]" />
@@ -146,19 +147,21 @@ export default function Expertises() {
         {ExpertisesData.map((data, idx) => (
           <div
             key={`expertise-${idx}`}
-            className="grid grid-cols-2 gap-6 items-center d"
+            className="md:grid md:grid-cols-2 flex flex-col-reverse gap-0  md:gap-6 items-center "
           >
             <div
               ref={(el) => {
                 if (el) expertisesRefText.current[idx] = el;
               }}
-              className={`space-y-2 ${idx % 2 !== 0 ? "order-2" : "order-1"}`}
+              className={`space-y-2 ${
+                idx % 2 !== 0 ? "md:order-2" : "md:order-1"
+              }`}
             >
               <h6 className="text-neutral-200 text-xs">{data.subtitles}</h6>
               <h3 className="text-white text-3xl font-semibold">
                 {data.title}
               </h3>
-              <p className="text-neutral-300 pt-10 leading-relaxed tracking-wide">
+              <p className="text-neutral-300 lg:text-base text-xs pr-10 lg:pr-0 lg:pt-10 pt-4 lg:leading-relaxed leading-loose tracking-wide">
                 {data.text}
               </p>
             </div>
@@ -168,15 +171,15 @@ export default function Expertises() {
                 if (el) expertisesRefImg.current[idx] = el;
               }}
               className={`relative ${
-                idx % 2 !== 0 ? "order-1" : "order-2"
-              } z-50`}
+                idx % 2 !== 0 ? "md:order-1" : "md:order-2"
+              } z-30`}
             >
               <Image
                 src={data.img}
                 alt={`image expertise ${idx}`}
                 width={500}
                 height={500}
-                className="w-full block h-[380px] object-contain"
+                className="md:w-full max-md:max-w-[400px]   md:h-[380px] object-contain"
               />
             </div>
           </div>

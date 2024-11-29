@@ -29,12 +29,12 @@ export default function Info() {
     });
   }, []);
   return (
-    <div className="w-full grid grid-cols-2 py-5  overflow-hidden ">
-      <div className="z-10 pl-20 py-10 ">
+    <div className="w-full lg:grid lg:grid-cols-2 py-5 relative h-full overflow-hidden ">
+      <div className=" lg:pl-20 max-lg:px-10 py-10 ">
         <h2 className="text-4xl text-title uppercase font-bold">
           Une agence internationale
         </h2>
-        <div className="pt-10 grid grid-cols-2 pl-10 gap-20">
+        <div className="pt-20 grid grid-cols-2 pl-10 gap-20">
           {infoData.map((data, idx) => {
             return (
               <div
