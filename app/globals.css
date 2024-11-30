@@ -4,8 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+body,
+html {
   font-family: "Montserrat";
+  scroll-behavior: smooth;
 }
 
 @layer utilities {

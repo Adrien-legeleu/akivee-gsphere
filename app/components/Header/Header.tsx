@@ -40,13 +40,13 @@ export default function Header() {
           </h2>
           <ul className="flex   gap-8 text-sm  capitalize text-indigo-purple dark:text-indigo-light font-semibold items-center">
             <li>
-              <Link href="#about">A propos</Link>
+              <Link href="#about">About Us</Link>
             </li>
             <li>
-              <Link href="#projects">Nos projets</Link>
+              <Link href="#expertise">Expertise</Link>
             </li>
             <li>
-              <Link href="#method">Notre méthode</Link>
+              <Link href="#info">Our Approach</Link>
             </li>
           </ul>
           <div className="flex items-center gap-2">

@@ -29,12 +29,16 @@ export default function Info() {
     });
   }, []);
   return (
-    <div className="w-full lg:grid lg:grid-cols-2 lg:py-5 py-16 relative h-full overflow-hidden ">
+    <div className="w-full lg:grid lg:grid-cols-2 py-16 relative h-full overflow-hidden ">
       <div className=" lg:pl-20 max-lg:px-10 lg:py-10 pb-20  ">
-        <h2 className="text-4xl text-title uppercase font-bold">
-          Une agence internationale
+        <h2 className="sm:text-4xl text-3xl sm:text-left text-center text-title uppercase font-bold">
+          Global Agency <br /> Digital Success
         </h2>
-        <div className="lg:pt-20 pt-10 grid grid-cols-2 pl-10 lg:gap-20 gap-10">
+
+        <div
+          className="pt-10 grid grid-cols-2 lg:pl-10 lg:gap-20 gap-10"
+          id="info"
+        >
           {infoData.map((data, idx) => {
             return (
               <div
@@ -46,11 +50,15 @@ export default function Info() {
                 }}
               >
                 <div className="h-2 w-2 bg-title rounded-full absolute top-10 -left-5" />
-                <h2 className="text-subtitle text-7xl font-bold ">
+                <h2 className="text-subtitle md:text-7xl text-5xl font-bold ">
                   {data.subtitle}
                 </h2>
-                <h3 className="text-title text-2xl font-bold">{data.title}</h3>
-                <p className="text-sm backdrop-blur-xl">{data.text}</p>
+                <h3 className="text-title sm:text-2xl text-xl font-bold">
+                  {data.title}
+                </h3>
+                <p className="sm:text-sm text-xs backdrop-blur-xl">
+                  {data.text}
+                </p>
               </div>
             );
           })}

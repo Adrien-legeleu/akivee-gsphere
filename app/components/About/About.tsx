@@ -18,55 +18,55 @@ import icon3 from "@/public/icon/incandescent_3159154.png";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-  const expertisesRefImg1 = useRef<HTMLDivElement | null>(null);
-  const expertisesRefImg2 = useRef<HTMLDivElement | null>(null);
-  const expertisesRefImg3 = useRef<HTMLDivElement | null>(null);
+  const aboutRefImg1 = useRef<HTMLDivElement | null>(null);
+  const aboutRefImg2 = useRef<HTMLDivElement | null>(null);
+  const aboutRefImg3 = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (expertisesRefImg1.current) {
+    if (aboutRefImg1.current) {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: expertisesRefImg1.current, // L'élément déclencheur
+            trigger: aboutRefImg1.current, // L'élément déclencheur
             start: "top 80%", // Début de l'animation (80% de la hauteur)
             end: "bottom 20%", // Fin de l'animation
             scrub: 3, // Synchronisation avec le scroll
           },
         })
         .fromTo(
-          expertisesRefImg1.current,
+          aboutRefImg1.current,
           { y: 50 }, // Position et opacité initiales
           { y: -50, ease: "power3.out" } // Position finale avec easing
         );
     }
-    if (expertisesRefImg3.current) {
+    if (aboutRefImg3.current) {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: expertisesRefImg3.current, // L'élément déclencheur
+            trigger: aboutRefImg3.current, // L'élément déclencheur
             start: "top 80%", // Début de l'animation (80% de la hauteur)
             end: "bottom 20%", // Fin de l'animation
             scrub: 3, // Synchronisation avec le scroll
           },
         })
         .fromTo(
-          expertisesRefImg3.current,
+          aboutRefImg3.current,
           { y: 40 }, // Position et opacité initiales
           { y: -40, ease: "power3.out" } // Position finale avec easing
         );
     }
-    if (expertisesRefImg2.current) {
+    if (aboutRefImg2.current) {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: expertisesRefImg2.current, // L'élément déclencheur
+            trigger: aboutRefImg2.current, // L'élément déclencheur
             start: "top 80%", // Début de l'animation (80% de la hauteur)
             end: "bottom 20%", // Fin de l'animation
             scrub: 3, // Synchronisation avec le scroll
           },
         })
         .fromTo(
-          expertisesRefImg2.current,
+          aboutRefImg2.current,
           { y: 30 }, // Position et opacité initiales
           { y: -30, ease: "power3.out" } // Position finale avec easing
         );
@@ -74,29 +74,34 @@ export default function About() {
   }, []);
 
   return (
-    <div className="lg:h-screen h-full w-full lg:grid lg:grid-cols-2 flex flex-col lg:px-20 px-10 gap-10 bg-neutral-50">
-      <div className="flex flex-col gap-4 justify-center">
+    <div
+      className="lg:h-screen h-full w-full lg:grid lg:grid-cols-2 flex flex-col lg:px-20 px-0 gap-10 bg-neutral-50"
+      id="about"
+    >
+      <div className="flex flex-col gap-4 max-lg:px-10 justify-center">
         <div className="max-w-xl">
-          <h6 className="text-blue-400 text-xs">Akivee GSphere</h6>
-          <h2 className="text-4xl text-title uppercase font-bold">
-            Tomorrow is Data
+          <h6 className="text-blue-400 text-xs sm:text-left text-center">
+            Akivee GSphere
+          </h6>
+          <h2 className="sm:text-4xl text-3xl sm:text-left text-center text-title uppercase font-bold">
+            Unlock Potential
           </h2>
         </div>
-        <p className="text-sm leading-loose text-muted-foreground max-w-xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero odio
-          ipsa maiores asperiores libero magni repellat quos deserunt recusandae
-          fuga dicta neque.Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Vero odio ipsa maiores asperiores libero magni repellat quos
-          deserunt recusandae fuga dicta neque.
+        <p className="text-sm sm:text-left text-center leading-loose text-muted-foreground max-w-xl">
+          We harness data to accelerate business success. Through tailored
+          digital marketing strategies such as SEO, creative design, and
+          targeted email campaigns, we elevate your brand's visibility and drive
+          measurable growth. Our solutions are designed to help your business
+          thrive in a competitive digital landscape.
         </p>
       </div>
 
       {/* Section des images animées */}
-      <div className="relative flex h-[500px]  w-full flex-col items-center justify-center">
+      <div className="relative flex h-[min(500px,80vh)]  w-full flex-col items-center justify-center">
         <div className="z-10 relative w-full h-full">
           <div
-            className="absolute w-32 h-48  left-0 bottom-10 z-20"
-            ref={expertisesRefImg2}
+            className="absolute sm:w-28 sm:h-40  h-36 w-24 sm:left-0  left-5 bottom-10 z-20"
+            ref={aboutRefImg2}
           >
             <Image
               src={aboutImg1}
@@ -108,8 +113,8 @@ export default function About() {
             />
           </div>
           <div
-            className="top-1/2 left-1/2 absolute w-80 h-60   z-10 -translate-x-1/2 -translate-y-1/2"
-            ref={expertisesRefImg1}
+            className="top-1/2 left-1/2 absolute sm:w-72 sm:h-52  h-48 w-68   z-10 -translate-x-1/2 -translate-y-1/2"
+            ref={aboutRefImg1}
           >
             <Image
               src={aboutImg2}
@@ -120,8 +125,8 @@ export default function About() {
             />
           </div>
           <div
-            className="absolute z-20 w-32 h-48 top-20 right-0"
-            ref={expertisesRefImg3}
+            className="absolute z-20 sm:w-28 sm:h-40  h-36 w-24 top-20 sm:right-0  right-5"
+            ref={aboutRefImg3}
           >
             <Image
               src={aboutImg3}
@@ -136,7 +141,7 @@ export default function About() {
         {/* Cercles orbitants */}
         <OrbitingCircles
           className="size-[50px] border-none bg-transparent"
-          radius={190}
+          radius={150}
           duration={20}
           reverse
         >
@@ -150,7 +155,7 @@ export default function About() {
         </OrbitingCircles>
         <OrbitingCircles
           className="size-[50px] border-none bg-transparent"
-          radius={190}
+          radius={150}
           duration={20}
           delay={2}
           reverse
@@ -165,7 +170,7 @@ export default function About() {
         </OrbitingCircles>
         <OrbitingCircles
           className="size-[50px] border-none bg-transparent"
-          radius={190}
+          radius={150}
           duration={20}
           delay={36}
           reverse

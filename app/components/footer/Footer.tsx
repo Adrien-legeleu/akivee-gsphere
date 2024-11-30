@@ -6,54 +6,50 @@ import { TextHoverEffect } from "@/components/aceternity/text-hover-effect";
 export default function Footer() {
   return (
     <div className="p-10 max-w-[1500px] mx-auto">
-      <div className="h-full w-full  py-10 max-sm:hidden flex items-center justify-center">
+      <div className="h-full w-full py-10 max-sm:hidden flex items-center justify-center">
         <TextHoverEffect text="AKIVEE" />
       </div>
-      <div className="md:grid md:grid-cols-40/60 flex flex-col  md:gap-4 gap-8 items-center justify-center">
+      <div className="md:grid md:grid-cols-40/60 flex flex-col md:gap-4 gap-8 items-center justify-center">
         <div className="space-y-5 max-w-sm flex flex-col md:items-baseline items-center">
-          <h2 className="flex items-center text-3xl gap-2 text-center  font-medium tracking-wider">
-            {/* <Image
-              width={100}
-              height={100}
-              alt="logo de adrec"
-              src={Logo}
-              className="w-12 h-12 rounded-full"
-            /> */}
+          <h2 className="flex items-center text-3xl gap-2 text-center font-medium tracking-wider">
             Akivee GSphere
           </h2>
           <i className="text-lg md:text-left text-center text-muted-foreground inline-block">
-            "Adrec, votre partenaire pour des solutions web sur-mesure et
-            innovantes."
+            "Your trusted partner for innovative digital solutions."
           </i>
         </div>
-        <div className="sm:grid sm:grid-cols-3 flex flex-col max-sm:gap-5 lg:text-sm  text-xs md:text-left text-center gap-2">
-          <ul className="space-y-2">
+
+        <div className="sm:grid sm:grid-cols-3 flex flex-col max-sm:gap-5 lg:text-sm text-xs md:text-left text-center gap-2">
+          <ul className="space-y-2 order-2 sm:order-1">
             <li className="hover:underline">
-              {" "}
-              <Link href="">mentions légales</Link>
+              <Link href="#about">About Us</Link>
             </li>
             <li className="hover:underline">
-              <Link href="">politique de confidentialité</Link>
-            </li>
-            <li className="text-xs">© 2024 Adrec. Tous droits réservés.</li>
-          </ul>
-          <ul className="space-y-2">
-            <li className="hover:underline">
-              <Link href="#about">A propos</Link>
+              <Link href="#expertise">Expertise</Link>
             </li>
             <li className="hover:underline">
-              <Link href="#projects">Nos projets</Link>
+              <Link href="#contact">Contact</Link>
             </li>
             <li className="hover:underline">
-              <Link href="#contact">Contactez-nous</Link>
-            </li>
-            <li className="hover:underline">
-              <Link href="#method">Notre méthode</Link>
+              <Link href="#info">Our Approach</Link>
             </li>
           </ul>
-          <ul className="space-y-2">
-            <li>adrienlegeleu@gmail.com</li>
-            <li>07 68 73 52 38</li>
+
+          <ul className="space-y-2 order-3 sm:order-2">
+            <li className="hover:underline">
+              <Link href="/legal-notice">Legal Notice</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href="/privacy-policy">Privacy Policy</Link>
+            </li>
+            <li className="text-xs">
+              © 2024 Akivee GSphere. All rights reserved.
+            </li>
+          </ul>
+
+          <ul className="space-y-2 order-1 sm:order-3">
+            <li>contact@akivee.com</li>
+            <li>+33 1 23 45 67 89</li>
           </ul>
         </div>
       </div>

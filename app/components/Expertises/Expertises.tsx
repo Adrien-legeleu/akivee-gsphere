@@ -17,7 +17,6 @@ export default function Expertises() {
   const expertisesReasonsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    // Animation pour ExpertisesData
     expertisesRefImg.current.forEach((element) => {
       gsap.fromTo(
         element,
@@ -37,9 +36,9 @@ export default function Expertises() {
     expertisesRefText.current.forEach((element) => {
       gsap.fromTo(
         element,
-        { y: 30 },
+        { y: 40 },
         {
-          y: -30,
+          y: -40,
           scrollTrigger: {
             trigger: element,
             start: "top 80%",
@@ -50,7 +49,6 @@ export default function Expertises() {
       );
     });
 
-    // Animation en cascade pour ExpertisesDataReasons
     expertisesReasonsRef.current.forEach((element, i) => {
       gsap.fromTo(
         element,
@@ -69,7 +67,6 @@ export default function Expertises() {
       );
     });
 
-    // Animation pour expertisesImgPrincipal
     if (expertisesImgPrincipal.current) {
       gsap
         .timeline({
@@ -82,14 +79,14 @@ export default function Expertises() {
         })
         .fromTo(
           expertisesImgPrincipal.current,
-          { y: 80 }, // Position initiale à y: 80
-          { y: 0, ease: "power3.out", duration: 1 } // Arrive à y: 0
+          { y: 80 },
+          { y: 0, ease: "power3.out", duration: 1 }
         );
     }
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative" id="expertise">
       <div className="absolute h-20 w-full bg-transparent top-0 left-0 backdrop-blur-[1px] z-20" />
       <div className="absolute h-20 w-full bg-transparent bottom-0 left-0 backdrop-blur-[1px] z-20" />
 
@@ -98,15 +95,15 @@ export default function Expertises() {
         <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[33%]" />
         <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[50%]" />
         <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[67%]" />
-        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[85%] " />
+        <div className="absolute h-full border-[1px] border-indigo-300/20 border-dashed top-10 left-[85%]" />
         <div className="sm:space-y-16 space-y-5 z-20">
-          <h2 className="text-title text-4xl uppercase font-semibold">
-            Nos expertises
+          <h2 className="text-title sm:text-4xl text-3xl uppercase font-semibold">
+            Our Expertise
           </h2>
           <div ref={expertisesImgPrincipal} className="relative">
             <Image
               src={ExpertiseImgPrincipal}
-              alt="image de la section expertises de notre agence de marketing digital web"
+              alt="Main expertise image"
               width={1500}
               height={1500}
             />
@@ -129,25 +126,25 @@ export default function Expertises() {
                 <p className="leading-relaxed tracking-wide text-sm">
                   {data.text}
                 </p>
-                <Button variant="secondary">Commencez</Button>
+                <Button variant="secondary">Get Started</Button>
               </div>
             </div>
           ))}
         </div>
       </div>
       <div
-        className="lg:px-20 px-10 pb-20 md:pt-40 pt-20 bg-[#001640] md:space-y-16 space-y-24 z-20 relative"
+        className="lg:px-20 px-10 sm:pb-20 pb-28 md:pt-40 pt-20 bg-[#001640] md:space-y-16 space-y-24 z-20 relative"
         style={{ clipPath: "polygon(0 4%, 100% 0, 100% 96%, 0% 100%)" }}
       >
         <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-2 left-[16%]" />
         <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-5 left-[33%]" />
         <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-10 left-[50%]" />
         <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-16 left-[67%]" />
-        <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-20 left-[85%] " />
+        <div className="absolute h-full border-[1px] border-indigo-300/10 border-dashed -top-20 left-[85%]" />
         {ExpertisesData.map((data, idx) => (
           <div
             key={`expertise-${idx}`}
-            className="md:grid md:grid-cols-2 flex flex-col-reverse gap-0  md:gap-6 items-center "
+            className="md:grid md:grid-cols-2 flex flex-col-reverse gap-0 md:gap-6 items-center"
           >
             <div
               ref={(el) => {
@@ -176,10 +173,10 @@ export default function Expertises() {
             >
               <Image
                 src={data.img}
-                alt={`image expertise ${idx}`}
-                width={500}
-                height={500}
-                className="md:w-full max-md:max-w-[400px]   md:h-[380px] object-contain"
+                alt={`expertise image ${idx}`}
+                width={1500}
+                height={1500}
+                className="w-full max-md:max-w-[400px] md:h-[380px] object-contain"
               />
             </div>
           </div>
