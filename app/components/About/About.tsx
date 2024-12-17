@@ -90,9 +90,9 @@ export default function About() {
         <p className="text-sm sm:text-left text-center leading-loose text-muted-foreground max-w-xl">
           We harness data to accelerate business success. Through tailored
           digital marketing strategies such as SEO, creative design, and
-          targeted email campaigns, we elevate your brand's visibility and drive
-          measurable growth. Our solutions are designed to help your business
-          thrive in a competitive digital landscape.
+          targeted email campaigns, we elevate your brand&lsquo;s visibility and
+          drive measurable growth. Our solutions are designed to help your
+          business thrive in a competitive digital landscape.
         </p>
       </div>
 

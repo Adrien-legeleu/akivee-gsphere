@@ -51,7 +51,7 @@ export default function Expertises() {
       );
     });
 
-    expertisesReasonsRef.current.forEach((element, i) => {
+    expertisesReasonsRef.current.forEach((element) => {
       gsap.fromTo(
         element,
         { opacity: 0, y: 80 },

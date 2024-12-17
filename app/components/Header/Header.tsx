@@ -1,7 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import Logo from "@/public/logo/logo.png";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { MenuBurger } from "./MenuBurger";

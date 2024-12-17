@@ -12,7 +12,7 @@ import Link from "next/link";
 import MenuImg from "@/public/Image/menu-button.png";
 import { useState } from "react";
 
-export const MenuBurger = ({ isScrolled }: { isScrolled: boolean }) => {
+export const MenuBurger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => {

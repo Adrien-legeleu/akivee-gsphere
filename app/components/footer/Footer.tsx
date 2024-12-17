@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import { TextHoverEffect } from "@/components/aceternity/text-hover-effect";
@@ -15,7 +14,7 @@ export default function Footer() {
             Akivee GSphere
           </h2>
           <i className="text-lg md:text-left text-center text-muted-foreground inline-block">
-            "Your trusted partner for innovative digital solutions."
+            &ldquo;Your trusted partner for innovative digital solutions.&ldquo;
           </i>
         </div>
 

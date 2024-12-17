@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Info() {
   const expertisesReasonsRef = useRef<HTMLDivElement[]>([]);
   useEffect(() => {
-    expertisesReasonsRef.current.forEach((element, i) => {
+    expertisesReasonsRef.current.forEach((element) => {
       gsap.fromTo(
         element,
         { opacity: 0, y: 80 },
@@ -42,6 +42,7 @@ export default function Info() {
           {infoData.map((data, idx) => {
             return (
               <div
+                key={"info" + idx}
                 className={`relative max-w-sm  ${
                   idx % 2 !== 0 ? "top-20" : " top-0"
                 }`}
