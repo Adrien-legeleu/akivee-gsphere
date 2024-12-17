@@ -3,6 +3,7 @@ import "./globals.css";
 
 import Footer from "./components/footer/Footer";
 import Header from "./components/Header/Header";
+import { Toaster } from "sonner";
 
 // SEO meta tags
 export const metadata: Metadata = {
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body className={` antialiased`}>
         <Header />
         <main>{children}</main>
+        <Toaster />
         <Footer />
       </body>
     </html>

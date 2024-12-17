@@ -48,8 +48,8 @@ export default function Footer() {
           </ul>
 
           <ul className="space-y-2 order-1 sm:order-3">
-            <li>contact@akivee.com</li>
-            <li>+33 1 23 45 67 89</li>
+            <li>akiveeglobalsphere@gmail.com</li>
+            <li>+91 99 11 64 85 85</li>
           </ul>
         </div>
       </div>
