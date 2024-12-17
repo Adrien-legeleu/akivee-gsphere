@@ -56,6 +56,8 @@ export default function Contact() {
           text: "",
         });
       } else {
+        console.log(response);
+
         toast("Une erreur est survenue, veuillez réessayer", {
           action: {
             label: "Erreur",
@@ -64,6 +66,8 @@ export default function Contact() {
         });
       }
     } catch (error) {
+      console.log(error);
+
       toast("Erreur d'envoi !", {
         action: {
           label: "Error",
