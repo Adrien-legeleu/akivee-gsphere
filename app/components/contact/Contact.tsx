@@ -57,6 +57,9 @@ export default function Contact() {
         });
       } else {
         console.log(response);
+        console.log("Email User:", process.env.EMAIL_USER);
+        console.log("Recipient Email:", process.env.RECIPIENT_EMAIL);
+        console.log("Recipient Email:", process.env.EMAIL_PASS);
 
         toast("Une erreur est survenue, veuillez réessayer", {
           action: {
