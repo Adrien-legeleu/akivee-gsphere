@@ -1,6 +1,5 @@
 import { Boxes } from "@/components/aceternity/background-boxes";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default function Landing() {
   return (
@@ -16,13 +15,13 @@ export default function Landing() {
         digital marketing strategies.
       </p>
       <div className="space-x-5 sm:text-base text-sm px-5 z-10">
-        <Link href="#contact">
+        <a href="#contact">
           {" "}
           <Button>Contact Us</Button>
-        </Link>
-        <Link href="#expertise">
+        </a>
+        <a href="#expertise">
           <Button variant="secondary">Our Expertise</Button>
-        </Link>
+        </a>
       </div>
     </div>
   );

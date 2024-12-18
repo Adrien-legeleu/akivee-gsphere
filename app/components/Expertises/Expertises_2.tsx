@@ -52,8 +52,8 @@ export default function Expertises_2({
             <Image
               src={data.img}
               alt={`expertise image ${idx}`}
-              width={1500}
-              height={1500}
+              width={400}
+              height={400}
               className="w-full max-md:max-w-[400px] md:h-[380px] object-contain"
             />
           </div>
